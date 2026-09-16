@@ -2,4 +2,4 @@
 
 ### AFRAME
 
-* [labyrinthee](./labyrinthe.html)
+* [labyrinthe](./labyrinthe.html)
