@@ -9,22 +9,22 @@
 
     <a-assets>
                
-         <!-- TEXTURES -->
-         <img id="texture1" src="assets/image/foret sombre.avif">
-         <img id="texture2" src="assets/image/bois sombre.jpg">
-         <img id="texture3" src="assets/image/vieux papier paint.jpg">
-         <img id="texture4" src="assets/image/moquette.jpg">
+        <!-- TEXTURES -->
+        <img id="texture1" src="assets/image/foret sombre.avif">
+        <img id="texture2" src="assets/image/bois sombre.jpg">
+        <img id="texture3" src="assets/image/vieux papier paint.jpg">
+        <img id="texture4" src="assets/image/moquette.jpg">
                 
-         <!-- TEXTURES PRINCIPALES -->
-         <a-asset-item 
-                 id="texture2" 
-                 material="src: #texture2; shader: standard"
-         ></a-asset-item>
+        <!-- TEXTURES PRINCIPALES -->
+        <a-asset-item 
+               id="texture2" 
+               material="src: #texture2; shader: standard"
+        ></a-asset-item>
 
-         <a-asset-item 
-                 id="texture3" 
-                 material="src: #texture3; shader: standard"
-         ></a-asset-item>
+        <a-asset-item 
+               id="texture3" 
+               material="src: #texture3; shader: standard"
+        ></a-asset-item>
 
     </a-assets>
 
@@ -33,11 +33,11 @@
 
         <!-- SOL -->
         <a-plane 
-                 position="-1 -0.850 -0.010" 
-                 rotation="-90 0 0" 
-                 height="4" 
-                 width= "4" 
-                 src= "#texture4"
+               position="-1 -0.850 -0.010" 
+               rotation="-90 0 0" 
+               height="4" 
+               width= "4" 
+               src= "#texture4"
         ></a-plane>
 
         <!-- CIEL -->
@@ -154,7 +154,7 @@
         ></a-box>
 
         </a-entity>
-      
+
         <!-- CAMERA -->
         <a-entity camera="active: true" 
         look-controls wasd-controls="acceleration:10" 
