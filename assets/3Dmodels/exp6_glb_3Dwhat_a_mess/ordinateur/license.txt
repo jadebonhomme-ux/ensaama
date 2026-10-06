@@ -1,0 +1,11 @@
+Model Information:
+* title:	Laptop_FNAF
+* source:	https://sketchfab.com/3d-models/laptop-fnaf-86647f279a294350a8ce052ca2009ce0
+* author:	dovahkhalesshi (https://sketchfab.com/dovahkhalesshi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Laptop_FNAF" (https://sketchfab.com/3d-models/laptop-fnaf-86647f279a294350a8ce052ca2009ce0) by dovahkhalesshi (https://sketchfab.com/dovahkhalesshi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
