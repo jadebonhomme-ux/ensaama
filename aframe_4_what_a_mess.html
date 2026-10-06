@@ -1,173 +1,350 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
-  <head>
-         <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  <script src="https://ensaama-officiel-numerique.github.io/components/debug/debug.js"></script>
+  <script src="https://ensaama-officiel-numerique.github.io/components/effects/test3_notoggle/effects-model.js"></script>
 
-  <body>
+  <!-- TIMELINE -->
+  <script type="application/json" id="scenario">
+  {
+    "timeline": [
+      {
+        "time": 0,
+        "target": "#ordinateur",
+        "event": "desappear"
+      },
+      {
+        "time": 100,
+        "target": "#lampe",
+        "event": "reboot"
+      },
+      {
+        "time": 15000,
+        "target": "#ordi1",
+        "event": "vertices-glitch"
+      },
+      {
+        "time": 20000,
+        "target": "#ordi2",
+        "event": "wireframe"
+      },
+      {
+        "time": 25000,
+        "target": "#meuble",
+        "event": "desappear"
+      },
+      {
+        "time": 30000,
+        "target": "#bureau",
+        "event": "reboot"
+      },
+  }
 
-    <a-assets>
-               
-        <!-- TEXTURES -->
-        <img id="texture1" src="assets/image/geek.jpg">
-        <img id="texture3" src="assets/image/vieux papier paint.jpg">
-        <img id="texture4" src="assets/image/moquette.jpg">
-                
-        <!-- TEXTURES PRINCIPALES -->
-        <a-asset-item 
-               id="texture2" 
-               material="src: #texture2; shader: standard"
-        ></a-asset-item>
+  </script>
 
-        <a-asset-item 
-               id="texture3" 
-               material="src: #texture3; shader: standard"
-        ></a-asset-item>
+</head>
+
+<body>
+
+  <a-scene
+    background="color: skyblue"
+
+    debug-keyboard="
+      key: e, r, t, y, u, i;
+      event: desappear, desappear, reboot, wireframe, desappear, reboot;
+      target: #ordinateur, #lampe, #ordi1, #ordi2, #meuble, #bureau
+    "
+  ><a-assets>
+
+      <!-- TEXTURES -->
+      <img
+        id="texture1"
+        src="assets/image/Papier peint gris.jpg"
+      >
+
+      <img
+        id="texture2"
+        src="assets/image/parquet.jpg"
+      >
+
+
+      <!-- MODÈLES 3D -->
+
+      <!-- BUREAU -->
+      <a-asset-item
+        id="model1OBJ"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Bureau2/bureau.obj"
+      ></a-asset-item>
+
+      <a-asset-item
+        id="model1MTL"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Bureau2/textures_bureau.mtl"
+      ></a-asset-item>
+
+      <!-- PORTE -->
+      <a-asset-item
+        id="model2GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Porte/scene.gltf"
+      ></a-asset-item>
+
+      <!-- LAMPE -->
+      <a-asset-item
+        id="model13GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Lampe/scene.gltf"
+      ></a-asset-item>
+
+      <!-- ORDINATEUR -->
+      <a-asset-item
+        id="model4GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/ordinateur/scene.gltf"
+      ></a-asset-item>
+
+      <!-- MEUBLE -->
+      <a-asset-item
+        id="model5GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Meuble2/scene.gltf"
+      ></a-asset-item>
+
+      <!-- ORDINATEUR 1 -->
+      <a-asset-item
+        id="model6GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/ordi1/scene.gltf"
+      ></a-asset-item>
+
+      <!-- ORDINATEUR 2 -->
+      <a-asset-item
+        id="model7GLTF"
+        src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/ordi2/scene.gltf"
+      ></a-asset-item>
 
     </a-assets>
 
-
-    <a-scene>
-
-        <!-- SOL -->
-        <a-plane 
-               position="-1 -0.850 -0.010" 
-               rotation="-90 0 0" 
-               height="4" 
-               width= "4" 
-               src= "#texture4"
-        ></a-plane>
-
-        <!-- CIEL -->
-        <a-sky color="skyblue" ></a-sky>
-      
-        <!-- LABYRINTHE 2 -->
-        <a-entity id="labyrinthe 2">
-
-        <!-- MURS EXTERIEURS -->
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1.76" 
-               position="-2.2 1.2 -2"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1.6" 
-               position="0.30 1.2 -2"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="3.2" 
-               position="-3 1.2 -0.5"
-               rotation="0 90 0"
-        ></a-box>
-        
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="4" 
-               position="-1 1.2 2"
-               rotation="0 0 0"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="4" 
-               position="1 1.2 0.1"
-               rotation="0 90 0"
-        ></a-box>
-
-        <!-- MURS INTERIEURS -->
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1.34" 
-               position="-0.7 1.2 -1"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1.8" 
-               position="-1.2 1.2 1"
-               rotation="0 0 0"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1"
-               position="-2 1.2 1.4"
-               rotation="0 90 0"
-        ></a-box>
-          
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1" 
-               position="-1.41 1.2 -1.4"
-               rotation="0 90 0"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1" 
-               position="-1.4 1.2 0.5"
-               rotation="0 90 0"
-        ></a-box>
-          
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="1.1" 
-               position="-0.13 1.2 -0.4"
-               rotation="0 90 0"
-        ></a-box>
-
-        <a-box 
-               material="src: #texture1; shader: standard" 
-               depth="0.18" 
-               height="4" 
-               width="0.8" 
-               position="-1.7 1.2 -0.05"
-               rotation="0 155 0"
-        ></a-box>
-
-        </a-entity>
-
-        <!-- CAMERA -->
-        <a-entity camera="active: true" 
-        look-controls wasd-controls="acceleration:10" 
-        position="0 1.6 0"
-        light="type: directional; color: #EEE; intensity: 0.5" position="-1 1 0"
-        ></a-entity>
-
-        <!-- LUMIERE -->
-        <a-light id="ambientLight" type="ambient" color="#blue"></a-light>
-        <a-light id="directionalLight" type="directional" color="#FFF" intensity="1" position="-0.5 1 1"></a-light>
+  
+    <!-- SOL -->
+      <a-plane
+       position="-0.968 -0.795 0.095"
+       rotation="-90 0 0"
+       height="4"
+       width="4"
+       material="src: #texture2; shader: standard"
+      ></a-plane>
 
 
-    </a-scene>
+    <!-- MURS -->
+    <a-entity id="what-a-mess">
 
-  </body>
+      <a-box
+        material="src: #texture1; shader: standard"
+        depth="0.18"
+        height="4"
+        width="4"
+        position="-3 1.2 0.091"
+        rotation="0 90 0"
+      ></a-box>
+
+      <a-box
+        material="src: #texture1; shader: standard"
+        depth="0.18"
+        height="4"
+        width="4"
+        position="-1 1.2 2"
+        rotation="0 0 0"
+      ></a-box>
+
+      <a-box
+        material="src: #texture1; shader: standard"
+        depth="0.18"
+        height="4"
+        width="4"
+        position="1.09 1.2 0.1"
+        rotation="0 90 0"
+      ></a-box>
+
+      <a-box
+        material="src: #texture1; shader: standard"
+        depth="0.18"
+        height="4"
+        width="4"
+        position="-0.95 1.194 -1.821"
+        rotation="0 0 0"
+      ></a-box>
+
+    </a-entity>
+
+    <!-- CAMERA -->
+    <a-entity
+      camera="active: true"
+      look-controls
+      wasd-controls="acceleration: 10"
+      position="-1 1.6 0"
+    ></a-entity>
+
+    <!-- LUMIÈRES -->
+    <a-light
+      id="ambientLight"
+      type="ambient"
+      color="#4653f4"
+      intensity="0.4"
+    ></a-light>
+
+    <a-light
+      id="directionalLight"
+      type="directional"
+      color="#2929f3"
+      intensity="1.5"
+      position="-0.504 2.926 0.592"
+    ></a-light>
+
+    <a-light
+      id="pointLightLampe"
+      type="point"
+      color="#9b8800"
+      intensity="2"
+      position="-2.504 1.431 1.715"
+      distance="5"
+    ></a-light>
+
+    <a-light
+      id="sunsetLamp"
+      type="spot"
+      color="#aefbff"
+      intensity="3"
+      angle="45"
+      penumbra="0.5"
+      position="-1.664 0.927 -1.187"
+      rotation="0 -90 0"
+      distance="4"
+    ></a-light>
+
+    <a-light
+      id="ledStrip"
+      type="point"
+      color="#ffffff"
+      intensity="1.5"
+      position="-1.405 0.521 0.694"
+      distance="2"
+      scale="0.5 0.5 0.5"
+    ></a-light>
+
+    <!-- BUREAU -->
+    <a-entity
+      id="bureau"
+      obj-model="obj: #model1OBJ; mtl: #model1MTL"
+
+      model-wireframe
+      model-transparent="opacity: 0.5"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 900; frequency: 4; slowdown: false"
+
+      position="-0.398 -0.787 -0.666"
+      scale="0.3 0.3 0.3"
+      rotation="0 90 0"
+    ></a-entity>
+
+    <!-- PORTE -->
+    <a-entity
+      id="porte"
+      gltf-model="#model2GLTF"
+      position="-0.103 0.649 -1.758"
+      scale="4 4 4"
+      rotation="0 180 0"
+    ></a-entity>
+
+   <!-- LAMPE -->
+    <a-entity
+      id="lampe"
+      gltf-model="#model13GLTF"
+
+      model-wireframe
+      model-transparent="opacity: 0.2"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 2000; frequency: 3; slowdown: false"
+
+      position="-2.434 1.754 1.435"
+      scale="0.015 0.015 0.015"
+      rotation="0 0 0"
+    ></a-entity>
+
+    <!-- ORDINATEUR -->
+    <a-entity
+      id="ordinateur"
+      gltf-model="#model4GLTF"
+
+      model-transparent="opacity: 0.2"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 2000; frequency: 5; slowdown: false"
+
+      position="-1.333 0.338 0.795"
+      scale="0.0015 0.0015 0.0015"
+      rotation="0 180 0"
+    ></a-entity>
+
+    <!-- MEUBLE -->
+    <a-entity
+      id="meuble"
+      gltf-model="#model5GLTF"
+
+      model-wireframe
+      model-transparent="opacity: 0.2"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 2000; frequency: 5; slowdown: false"
+
+      material="transparent: false; depthWrite: true; side: double"
+      position="-2.002 -0.795 -1.298"
+      scale="0.8 1.2 1"
+      rotation="0 0 0"
+    ></a-entity>
+
+    <!-- ORDINATEUR 1 -->
+    <a-entity
+      id="ordi1"
+      gltf-model="#model6GLTF"
+
+      model-wireframe
+      model-transparent="opacity: 0.2"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 2000; frequency: 5; slowdown: false"
+
+      material="transparent: false; depthWrite: true; side: double"
+      position="-2.3 0.725 -1.312"
+      scale="0.0025 0.003 0.003"
+      rotation="0 -15 0.7"
+    ></a-entity>
+
+    <!-- ORDINATEUR 2 -->
+    <a-entity
+      id="ordi2"
+      gltf-model="#model7GLTF"
+
+      model-wireframe
+      model-transparent="opacity: 0.2"
+      model-desappear="opacity: 0.1; duration: 900"
+      model-delete
+      model-bluescreen="color: blue; duration: 200"
+      model-reboot="duration: 2000; frequency: 5; slowdown: false"
+
+      material="transparent: false; depthWrite: true; side: double"
+      position="-1.372 0.727 -1.261"
+      scale="0.02 0.02 0.02"
+      rotation="0 60 0"
+    ></a-entity>
+
+
+  </a-scene>
+
+</body>
 
 </html>
