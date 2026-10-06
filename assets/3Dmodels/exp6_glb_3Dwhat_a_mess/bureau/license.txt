@@ -1,0 +1,11 @@
+Model Information:
+* title:	90s Desk Scene
+* source:	https://sketchfab.com/3d-models/90s-desk-scene-02611cfa7b2141c1be56fdaa37d64747
+* author:	Sophie (https://sketchfab.com/scoppock)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "90s Desk Scene" (https://sketchfab.com/3d-models/90s-desk-scene-02611cfa7b2141c1be56fdaa37d64747) by Sophie (https://sketchfab.com/scoppock) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

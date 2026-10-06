@@ -1,0 +1,11 @@
+Model Information:
+* title:	Aquarium lamp
+* source:	https://sketchfab.com/3d-models/aquarium-lamp-2d4cc112242148babd54093672298876
+* author:	Red Kaiser (https://sketchfab.com/redkaiser555)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Aquarium lamp" (https://sketchfab.com/3d-models/aquarium-lamp-2d4cc112242148babd54093672298876) by Red Kaiser (https://sketchfab.com/redkaiser555) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
