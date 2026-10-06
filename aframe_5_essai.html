@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+
+    <a-assets>
+      <!-- TEXTURES -->
+      <img id="texture1" src="assets/image/geek.jpg">
+      <img id="texture2" src="assets/image/parquet.jpg">
+      <img id="texture3" src="assets/image/papier bleu.jpg">
+
+      <!-- MODÈLE LIT -->
+      <a-asset-item id="modelGLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Lit/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE BUREAU -->
+      <a-asset-item id="model2GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/bureau/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE CHAISE -->
+      <a-asset-item id="model3GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Chaise/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 1 -->
+      <a-asset-item id="model4GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 1/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 2 -->
+      <a-asset-item id="model5GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 2/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE PORTE -->
+      <a-asset-item id="model6GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Porte/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE ORDINATEUR -->
+      <a-asset-item id="model7GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/ordinateur/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 3 -->
+      <a-asset-item id="model8GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 3/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 4 -->
+      <a-asset-item id="model9GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 4/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 5 -->
+      <a-asset-item id="model10GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 5/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 6 -->
+      <a-asset-item id="model11GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 6/scene.gltf"></a-asset-item>
+
+      <!-- MODÈLE POSTER 7 -->
+      <a-asset-item id="model12GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Poster 7/scene.gltf"></a-asset-item>
+
+      <!-- MEUBLE -->
+      <a-asset-item id="model13GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Meuble/scene.gltf"></a-asset-item>
+
+      <!-- FIGURINE -->
+      <a-asset-item id="model14GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Figurine/scene.gltf"></a-asset-item>
+
+      <!-- AQUARIUM LAMPE -->
+      <a-asset-item id="model15GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Aquarium lampe/scene.gltf"></a-asset-item>
+
+      <!-- CASQUE -->
+      <a-asset-item id="model16GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Casque/scene.gltf"></a-asset-item>
+
+      <!-- LAMPE -->
+      <a-asset-item id="model17GLTF" src="assets/3Dmodels/exp6_glb_3Dwhat_a_mess/Lampe/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-scene>
+
+      <!-- SOL -->
+      <a-plane 
+        position="-0.968 -0.795 0.095"
+        rotation="-90 0 0" 
+        height="4" 
+        width="4" 
+        material="src: #texture2; shader: standard"
+      ></a-plane>
+
+      <!-- CIEL -->
+      <a-sky color="skyblue"></a-sky>
+
+      <!-- MURS -->
+      <a-entity id="what-a-mess">
+        <a-box material="src: #texture3; shader: standard" depth="0.18" height="4" width="4" position="-3 1.2 0.091" rotation="0 90 0"></a-box>
+        <a-box material="src: #texture1; shader: standard" depth="0.18" height="4" width="4" position="-1 1.2 2" rotation="0 0 0"></a-box>
+        <a-box material="src: #texture3; shader: standard" depth="0.18" height="4" width="4" position="1.09 1.2 0.1" rotation="0 90 0"></a-box>
+        <a-box material="src: #texture3; shader: standard" depth="0.18" height="4" width="4" position="-0.95 1.194 -1.821" rotation="0 0 0"></a-box>
+
+      <!-- CAMERA -->
+      <a-entity 
+        camera="active: true" 
+        look-controls 
+        wasd-controls="acceleration: 10" 
+        position="-1 1.6 0"
+      ></a-entity>
+
+      <!-- LUMIERES -->
+      <a-light id="ambientLight" type="ambient" color="#9f9f9f" intensity="0.2"></a-light>
+      <a-light id="directionalLight" type="directional" color="#c49dee" intensity="2" position="-1.312 1.955 0.098"></a-light>
+      <a-entity light="type: directional; color: #EEE; intensity: 3" position="0.311 0.587 -0.112"></a-entity>
+
+      <!-- LIT -->
+      <a-entity 
+        gltf-model="#modelGLTF" 
+        position="-1.797 -0.73 0.457"
+        scale="1.1 1.1 1.1"
+        rotation="0 180 0"
+      ></a-entity>
+
+      <!-- BUREAU -->
+      <a-entity
+      gltf-model="#model2GLTF"
+      position="0.552 -0.827 0.818"
+      scale="0.125 0.160 0.150"
+      rotation="0 180 0"
+      ></a-entity>
+
+      <!-- CHAISE -->
+      <a-entity
+      gltf-model="#model3GLTF"
+      position="-0.197 0.05 0.684"
+      scale="0.850 0.850 0.850"
+      rotation="0 60 0"
+      ></a-entity>
+
+      <!-- POSTER 1 -->
+      <a-entity
+      gltf-model="#model4GLTF"
+      position="-0.222 1.181 -2.256"
+      scale="0.2 0.2 0.2"
+      rotation="90 0 0"
+      ></a-entity>
+
+      <!-- POSTER 2 -->
+      <a-entity
+      gltf-model="#model5GLTF"
+      position="-2.906 1.473 0.936"
+      scale="0.3 0.3 0.3"
+      rotation="0 0 -90"
+      ></a-entity>
+
+      <!-- PORTE -->
+      <a-entity
+      gltf-model="#model6GLTF"
+      position="-0.324 0.649 -1.758"
+      scale="4 4 4"
+      rotation="0 180 0"
+      ></a-entity>
+
+      <!-- ORDINATEUR -->
+      <a-entity
+      gltf-model="#model7GLTF"
+      position="0.275 0.44 0.687"
+      scale="0.0015 0.0015 0.0015"
+      rotation="0 -90 0"
+      ></a-entity>
+
+      <!-- POSTER 3 -->
+      <a-entity
+      gltf-model="#model8GLTF"
+      position="1.019 1.098 1.121"
+      scale="0.008 0.008 0.008"
+      rotation="0 -90 0"
+      ></a-entity>
+
+      <!-- POSTER 4 -->
+      <a-entity
+      gltf-model="#model9GLTF"
+      position="-2.92 1.049 0.266"
+      scale="0.012 0.012 0.012"
+      rotation="90 -90 180"
+      ></a-entity>
+
+      <!-- POSTER 5 -->
+      <a-entity
+      gltf-model="#model10GLTF"
+      position="0.982 1.449 0.27"
+      scale="0.008 0.008 0.008"
+      rotation="0 -90 0"
+      ></a-entity>
+
+      <!-- POSTER 6 -->
+      <a-entity
+      gltf-model="#model11GLTF"
+      position="-2.909 1.727 -0.571"
+      scale="0.008 0.008 0.008"
+      rotation="0 90 0"
+      ></a-entity>
+
+      <!-- POSTER 7 -->
+      <a-entity
+      gltf-model="#model12GLTF"
+      position="-2.886 1.557 0.196"
+      scale="0.05 0.05 0.05"
+      rotation="0 0 0"
+      ></a-entity>
+
+      <!-- MEUBLE -->
+      <a-entity
+      gltf-model="#model13GLTF"
+      position="-2.272 -0.794 -1.192"
+      scale="2 2.2 2"
+      rotation="0 90 0"
+      ></a-entity>
+
+      <!-- FIGURINE -->
+      <a-entity
+      gltf-model="#model14GLTF"
+      position="-2.895 1.292 -1.051"
+      scale="2 2.2 2"
+      rotation="0 90 0"
+      ></a-entity>
+
+      <!-- AQUARIUM LAMPE -->
+      <a-entity
+      gltf-model="#model15GLTF"
+      position="-2.361 0.179 -1.388"
+      scale="2 2.2 2"
+      rotation="0 -25 0"
+      ></a-entity>
+
+       <!-- CASQUE -->
+      <a-entity
+      gltf-model="#model16GLTF"
+      position="-2.054 0.297 -0.777"
+      scale="0.1 0.1 0.1"
+      rotation="90 -180 0"
+      ></a-entity>
+
+       <!-- LAMPE -->
+      <a-entity
+      gltf-model="#model17GLTF"
+      position="0.659 1.754 -1.18"
+      scale="0.015 0.015 0.015"
+      rotation="0 0 0"
+      ></a-entity>
+
+    </a-scene>
+
+  </body>
+
+</html>
