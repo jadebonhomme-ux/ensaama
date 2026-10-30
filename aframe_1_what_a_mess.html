@@ -380,47 +380,38 @@
     });
   </script>
 
+  
   <!-- GESTION DU SON -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const musique = document.querySelector('#musique');
-      const boutonSon = document.querySelector('#bouton');
+     const musique = document.querySelector('#musique');
+     const boutonSon = document.querySelector('#bouton');
 
-      if (!musique || !boutonSon) {
-        console.error('Musique ou bouton audio introuvable.');
-        return;
+     if (!musique || !boutonSon) return;
+
+     function lancerSon() {
+       musique.play()
+         .then(function () {
+           boutonSon.textContent = 'SON OFF';
+         })
+         .catch(function () {});
       }
 
-      function lancerSon() {
-        musique.play()
-          .then(function () {
-            boutonSon.textContent = 'SON OFF';
-          })
-          .catch(function (erreur) {
-            console.error('Impossible de lancer le son :', erreur);
-            boutonSon.textContent = 'RÉESSAYER';
-          });
+    document.addEventListener('keydown', function (event) {
+      if (event.key.toLowerCase() === 's' && !event.repeat) {
+        lancerSon();
       }
-
-      document.addEventListener('keydown', function (event) {
-        if (event.key.toLowerCase() === 's' && !event.repeat) {
-          lancerSon();
-        }
-      });
-
-      boutonSon.addEventListener('click', function () {
-        if (musique.paused) {
-          lancerSon();
-        } else {
-          musique.pause();
-          boutonSon.textContent = 'SON ON';
-        }
-      });
-
-      musique.addEventListener('error', function () {
-        console.error('Erreur de chargement du fichier audio. Vérifie le chemin assets/audio.');
-      });
     });
+
+    boutonSon.addEventListener('click', function () {
+      if (musique.paused) {
+        lancerSon();
+      } else {
+        musique.pause();
+        boutonSon.textContent = 'SON ON';
+      }
+     });
+   });
   </script>
 
 </body>
